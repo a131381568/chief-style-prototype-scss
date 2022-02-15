@@ -1,0 +1,230 @@
+body.video-index {
+  #Content {
+    padding-top: 80px;
+    padding-bottom: 0;
+    border-bottom: 1px solid $colorb5;
+    //手機
+    @include phone-w() {
+      padding-top: 40px;
+    }
+    //內容寬度
+    .section_wrapper {
+      max-width: none;
+      & > .the_content_wrapper {
+        margin: 0 auto;
+        & > div:not(.addtoany_content_bottom) {
+          max-width: calc(1175px + 10% + 42px * 2);
+          margin: 0 auto;
+        }
+      }
+    }
+
+    //grid　樣式
+    .chief-video-grid-outer {
+      //筆電以下
+      @include nb-bottm-w() {
+        padding: 0 35px;
+      }
+      //手機
+      @include phone-w() {
+        padding: 0;
+      }
+
+      .vc_grid-filter-default {
+        @extend %disnone;
+      }
+
+      & > .wpb_column {
+        & > .vc_column-inner {
+          //手機
+          @include phone-w() {
+            padding: 0;
+          }
+        }
+      }
+
+      //grid 本身
+      .chief-video-grid {
+        .vc_grid-item {
+          //全部的平板(橫+直)
+          @include pad-p-l-w() {
+            width: 50%;
+          }
+          & > .vc_grid-item-mini {
+            box-shadow: 0 0 3px 0px rgba(0, 0, 0, 0.05);
+            & > .vc_gitem-animated-block {
+              .chief-video-grid-item-photo {
+                background-position: top left;
+                &:before {
+                  padding-top: 225px;
+                }
+                &:after {
+                  content: " ";
+                  width: 0;
+                  height: 0;
+                  border-style: solid;
+                  border-width: 0 22px 22px 22px;
+                  border-color: transparent transparent #fff transparent;
+                  position: absolute;
+                  bottom: 0;
+                  left: 25px;
+                }
+                & > a {
+                  z-index: 0;
+                  background-image: linear-gradient(
+                    45deg,
+                    rgba(0, 0, 0, 0.1) 0%,
+                    rgba(0, 0, 0, 0.05) 40%,
+                    rgba(255, 255, 255, 0) 100%
+                  );
+                  &:before {
+                    content: "";
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 70px;
+                    background-image: -webkit-gradient(
+                      105deg,
+                      rgba(255, 255, 255, 0) 0%,
+                      rgba(255, 255, 255, 0.1) 50%,
+                      rgba(255, 255, 255, 0.2) 100%
+                    );
+                    background-image: -webkit-linear-gradient(
+                      105deg,
+                      rgba(255, 255, 255, 0) 0%,
+                      rgba(255, 255, 255, 0.1) 50%,
+                      rgba(255, 255, 255, 0.2) 100%
+                    );
+                    background-image: -moz-linear-gradient(
+                      105deg,
+                      rgba(255, 255, 255, 0) 0%,
+                      rgba(255, 255, 255, 0.1) 50%,
+                      rgba(255, 255, 255, 0.2) 100%
+                    );
+                    background-image: -o-linear-gradient(
+                      105deg,
+                      rgba(255, 255, 255, 0) 0%,
+                      rgba(255, 255, 255, 0.1) 50%,
+                      rgba(255, 255, 255, 0.2) 100%
+                    );
+                    background-image: linear-gradient(
+                      105deg,
+                      rgba(255, 255, 255, 0) 0%,
+                      rgba(255, 255, 255, 0.1) 50%,
+                      rgba(255, 255, 255, 0.2) 100%
+                    );
+                    -webkit-transform: skew(35deg) translateX(-35%);
+                    -ms-transform: skew(50deg) translateX(-50%);
+                    transform: skew(50deg) translateX(-50%);
+                    z-index: 1;
+                    transition: all 1s;
+                  }
+                }
+                // play 鍵
+                .chief-video-grid-item-photo-play {
+                  margin: 0;
+                  .vc_single_image-img {
+                    border-radius: 99px;
+                  }
+                }
+              }
+            }
+            & > .chief-video-grid-item-info {
+              .vc_gitem-row-position-top {
+                & > .vc_gitem-col {
+                  padding: 30px 30px 40px;
+                }
+              }
+              .vc_gitem-post-data-source-post_date {
+                margin-bottom: 10px;
+                h6 {
+                  margin-bottom: 0;
+                  @extend %colorMain;
+                  @extend %font700;
+                  @extend %cg_font;
+                }
+              }
+              .vc_gitem-post-data-source-post_title {
+                margin: 0;
+                h3 {
+                  @include multi-ellipsis(2, 1.4em, 100px);
+                  @extend %color32;
+                  margin: 0;
+                  //直平板以下的載具
+                  @include pads-phone-w() {
+                    height: 88px;
+                  }
+                }
+              }
+              .vc_gitem-post-data-source-post_excerpt {
+                & > * {
+                  @include multi-ellipsis(2, 1.9em, 60px);
+                  @extend %colordblue;
+                  @extend %font400;
+                  opacity: 77%;
+                }
+                * {
+                  margin: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+      .chief-video-grid-box {
+        .vc_gitem-row-position-bottom {
+          & > div {
+            padding: 38px 40px;
+          }
+          .vc_gitem-post-data-source-post_title {
+            margin-bottom: 0;
+            & > * {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+
+    //分享
+    .addtoany_content_bottom {
+      position: relative;
+      top: 0;
+      z-index: 2;
+      left: auto;
+      text-align: center;
+      margin: 30px auto 0;
+      padding: 80px 0 40px;
+      @extend %bgmblue;
+      //手機
+      @include phone-w() {
+        margin: 0 -33px;
+        padding: 70px 0 20px;
+      }
+      a {
+        padding: 0 15px;
+        display: inline-block;
+        margin-bottom: 25px;
+        //手機
+        @include phone-w() {
+          padding: 0 5px;
+        }
+        .a2a_svg {
+          width: 50px !important;
+          height: 50px !important;
+          svg {
+            width: 50px;
+            height: 50px;
+            //手機
+            @include phone-w() {
+              width: 35px;
+              height: 35px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

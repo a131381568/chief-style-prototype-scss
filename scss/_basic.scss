@@ -1,0 +1,98 @@
+//全預設定
+body {
+  h1 {
+    @extend %h1;
+    margin-bottom: 0;
+  }
+
+  h2 {
+    @extend %h2;
+    margin-bottom: 0;
+  }
+  h3 {
+    @extend %font700;
+    @extend %h3;
+  }
+  h4 {
+    @extend %h4;
+  }
+  h5 {
+    @extend %h5;
+  }
+  h6 {
+    @extend %h6;
+  }
+  .h7 {
+    @extend %h7;
+  }
+  .h8 {
+    @extend %h8;
+  }
+
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .cg_font {
+    @extend %cg_font;
+  }
+  .chief_tab_title {
+    @extend %tab_title;
+  }
+  .applic_title {
+    @extend %applic_title;
+  }
+  .applic_s_title {
+    @extend %applic_s_title;
+  }
+
+  .fff-font {
+    @extend %fff-font;
+    * {
+      @extend %fff-font;
+    }
+  }
+
+  .fff-bg {
+    @extend %bgfff;
+  }
+
+  .colorb5 {
+    @extend %colorb5;
+  }
+
+  .colormain {
+    @extend %colorMain;
+  }
+
+  .font700 {
+    @extend %font700;
+  }
+
+  .colordblue {
+    @extend %colordblue;
+    * {
+      @extend %colordblue;
+    }
+  }
+
+  .op70 {
+    opacity: 70%;
+  }
+
+  .mobile-hide {
+    //手機
+    @include phone-w() {
+      display: none;
+    }
+  }
+
+  //視差區塊
+  .vc_parallax-inner.vc_parallax-inner.vc_parallax-inner {
+    background-size: 100%;
+    background-position: 50% -600px;
+  }
+}

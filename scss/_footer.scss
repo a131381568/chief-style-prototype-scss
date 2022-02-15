@@ -1,0 +1,243 @@
+//footer widgets
+footer#Footer {
+  //手機
+  @include phone-w() {
+    background: $colormblue;
+  }
+  .widgets_wrapper {
+    padding: 50px 0;
+    //手機
+    @include phone-w() {
+      padding: 25px 0 0 0;
+    }
+    .container {
+      max-width: 800px;
+      //手機
+      @include phone-w() {
+        margin: 0 -15px;
+      }
+      .one-fourth {
+        .widget {
+          padding: 0;
+          margin-top: 0;
+          h4 {
+            @extend %footer_title;
+            @extend %color32;
+          }
+          ul.menu {
+            //手機
+            @include phone-w() {
+              margin: 0 0 20px 0;
+            }
+            li {
+              a {
+                background: none;
+                border: none;
+                opacity: 70%;
+                padding: 0;
+                margin: 0;
+                @extend %footer_text;
+                @extend %color32;
+                &:hover {
+                  opacity: 100%;
+                  color: $color32 !important;
+                }
+                //手機
+                @include phone-w() {
+                  margin: 0 0 8px 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  //原本的copyright
+  .footer_copy {
+    @extend %disnone;
+  }
+}
+
+//logo, 地址, 聯絡電話
+.chief-footer-row {
+  //手機
+  @include phone-w() {
+    background: $colormblue;
+  }
+  .chief-footer-about-bar {
+    max-width: none;
+    padding: 20px 0;
+    border-bottom: 1px solid $colorb5;
+    width: calc(100% - 16%);
+    //直平板
+    @include pads-w() {
+      width: calc(100% - 35px);
+    }
+    //手機
+    @include phone-w() {
+      margin: 0 auto;
+      padding: 20px 0 !important;
+      width: calc(100% - 30px);
+    }
+
+    & > div {
+      //手機
+      @include phone-w() {
+        margin-bottom: 10px;
+      }
+    }
+
+    & * {
+      margin-bottom: 0;
+    }
+    .chief-footer-about-logo-col {
+      margin-left: 0;
+      width: 160px;
+      //全平板
+      @include pad-p-l-w() {
+        width: 33%;
+        margin: 0;
+        height: 30px;
+      }
+      //手機
+      @include phone-w() {
+        padding-bottom: 5px;
+      }
+      img {
+        width: 160px;
+      }
+    }
+    .chief-footer-about-company {
+      width: 170px;
+      //全平板
+      @include pad-p-l-w() {
+        width: 33%;
+        margin: 0;
+        height: 30px;
+      }
+    }
+    .chief-footer-about-addr {
+      width: calc(95% - 650px);
+      //全平板
+      @include pad-p-l-w() {
+        width: 34%;
+        margin: 0;
+        height: 30px;
+      }
+    }
+    .chief-footer-phone {
+      width: 160px;
+      margin: 0;
+    }
+    .chief-footer-about-heading {
+      @extend %font400;
+      @extend %footer_text;
+    }
+    .chief-footer-about-phone-heading {
+      text-align: right;
+      @extend %cg_font;
+      @extend %btn_text;
+      @extend %colorMain;
+      @extend %font700;
+      //全平板
+      @include pad-p-l-w() {
+        text-align: left;
+      }
+      //手機
+      @include phone-w() {
+        text-align: left;
+        font-size: 13px;
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+
+//footer-menu
+.chief_footer_menu_wrapper {
+  padding: 20px 0 15px;
+  //手機
+  @include phone-w() {
+    background: $colormblue;
+  }
+  .container {
+    max-width: 800px;
+    //手機
+    @include phone-w() {
+      padding: 0 5px !important;
+    }
+    ul {
+      li {
+        float: left;
+        text-align: center;
+        width: calc(12.5% - 1px);
+        border-right: 1px solid $colorb5;
+        //手機
+        @include phone-w() {
+          text-align: left;
+          width: auto;
+          padding: 0 3%;
+          margin-bottom: 6px;
+        }
+        a {
+          opacity: 77%;
+          @extend %color32;
+          @extend %footer_text;
+          &:hover {
+            opacity: 100%;
+          }
+        }
+        &:last-child {
+          border-right: none;
+        }
+      }
+    }
+  }
+}
+
+//copy right
+.chief_footer_copy {
+  text-align: center;
+  line-height: 1.9em;
+  @extend %color32;
+  @extend %h8;
+  @extend %cg_font;
+  //手機
+  @include phone-w() {
+    font-size: 13px;
+    background: $colormblue;
+    padding-bottom: 60px;
+  }
+  .container {
+    //手機
+    @include phone-w() {
+      padding: 0 15px !important;
+      text-align: left;
+    }
+    br {
+      //手機 以上的尺寸
+      @include phone-w-outer() {
+        display: none;
+      }
+    }
+  }
+}
+
+//除了首頁以外 footer 背景淡藍色
+body {
+  &:not(.home) {
+    #Footer {
+      @extend %bgmblue;
+    }
+    .chief-footer-row {
+      @extend %bgmblue;
+    }
+    .chief_footer_menu_wrapper {
+      @extend %bgmblue;
+    }
+    .chief_footer_copy {
+      @extend %bgmblue;
+    }
+  }
+}

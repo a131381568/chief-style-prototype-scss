@@ -1,0 +1,493 @@
+$main-color: #ed0300; //d01108
+$color40: #404040;
+$color32: #323232;
+$colorb5: #b5b5b5;
+$color83: #838383;
+$colorbf: #bfbfbf;
+
+$colorgblue: #f5f8ff; //淡藍色
+$colormblue: #f5f5f7; //淡藍色-2
+
+$colordblue: #0a2129; //深藍綠
+$color000: #000;
+$colorline: #e1e1e1; //淺灰線的灰
+
+$colorligreen: #5b8b7b; //藍綠色
+
+$colororange: #ff8231; //橘色
+
+$pb-10: 10px;
+$cg_font: "Century Gothic";
+$ming_font: "新細明體";
+$tc_font: "Noto Serif TC"; //思源宋
+$tc_sans: "Noto Sans TC"; //思源黑
+
+$h1: 40.44px; //主視覺slogan, 內頁 title box 內的主標題
+$h2: 37.49px; //中標題
+$h3: 30px; //聯絡我們,電子報 標題, 內頁中標題, 成功方案 Grid 標題
+$applic_title: 29.16px; //商業應用標題
+$key_vision_r_title: 29.8px; //主視覺右邊英文標題
+$card_title: 28px; //最新消息 card 標題, 產品資料中標題
+$h4: 22px; //Grid 標題  //原本是27...
+$h5: 24px; //小標題
+$key_vision_l_title: 22.87px; //主視覺左邊中文小標題
+$list_title: 27px; //內頁 list title  //原本是22...
+$key_vision_grid_num: 21.24px; //主視覺 grid 序號
+$ln_btn: 20px; //大按鈕文字
+$tab_title: 18px; //中標題下 slogan, 選單標題 ,聯絡我們,電子報-slogan, 主視覺 Watch now, 主視覺中文小標題, tab標題, 產品資料list標題
+$footer_title: 17px; //最新消息 list 標題, footer標題, 產品 filter 標題,
+$btn_text: 16px; //lord more, 按鈕字大小, 電話,  主視覺社群文字
+$h6: 15px; //0.95rem , 摘要-日期, 表單內文字,  top  bar 文字, 內頁內文基礎字
+$applic_s_title: 14.8px; //商業應用小標題
+$h7: 14px; //認證標題, 主視覺英文小標題
+$footer_text: 12.81px; //footer 內文
+$h8: 12px; //copyright
+
+//-------------------------------- 顏色背景繼承 --------------------------------
+
+//主色
+%colorMain {
+  color: $main-color;
+}
+
+//主色背景
+%bgMain {
+  background: $main-color;
+}
+
+//全黑色
+%color000 {
+  color: $color000;
+}
+
+//背景全黑色
+%bg000 {
+  background: $color000;
+}
+
+//黑色404040
+%color40 {
+  color: $color40;
+}
+
+//黑色323232
+%color32 {
+  color: $color32;
+}
+
+//灰色bf
+%colorbf {
+  color: $colorbf;
+}
+
+//灰色b5
+%colorb5 {
+  color: $colorb5;
+}
+
+//灰色b5背景
+%bgb5 {
+  background: $colorb5;
+}
+
+//灰色83
+%color83 {
+  color: $color83;
+}
+
+//灰色83背景
+%bg83 {
+  background: $color83;
+}
+
+//白色背景
+%bgfff {
+  background: #fff;
+}
+
+//白色字
+%fff-font {
+  color: #fff;
+}
+
+//深藍綠色
+%colordblue {
+  color: $colordblue;
+}
+
+//深藍綠色背景
+%bgdblue {
+  background: $colordblue;
+}
+
+//繼承淡藍色-2 背景
+%bgmblue {
+  background: $colormblue;
+}
+
+//繼承藍綠色文字
+%colorligreen {
+  color: $colorligreen;
+}
+
+//繼承藍綠色背景
+%bgligreen {
+  background: $colorligreen;
+}
+
+//橘色文字
+%colororange {
+  color: $colororange;
+}
+
+//橘色背景
+%bgorange {
+  background: $colororange;
+}
+
+//-------------------------------- 字級繼承 --------------------------------
+
+%h1 {
+  font-size: $h1;
+}
+
+%h2 {
+  font-size: $h2;
+}
+
+%h3 {
+  font-size: $h3;
+}
+
+%applic_title {
+  font-size: $applic_title;
+}
+
+%key_vision_r_title {
+  font-size: $key_vision_r_title;
+}
+
+%card_title {
+  font-size: $card_title;
+}
+
+%h4 {
+  font-size: $h4;
+}
+
+%h5 {
+  font-size: $h5;
+}
+
+%key_vision_l_title {
+  font-size: $key_vision_l_title;
+}
+%list_title {
+  font-size: $list_title;
+}
+%key_vision_grid_num {
+  font-size: $key_vision_grid_num;
+}
+
+%ln_btn {
+  font-size: $ln_btn;
+}
+
+%tab_title {
+  font-size: $tab_title;
+}
+%footer_title {
+  font-size: $footer_title;
+}
+%btn_text {
+  font-size: $btn_text;
+}
+
+%h6 {
+  font-size: $h6;
+}
+
+%applic_s_title {
+  font-size: $applic_s_title;
+}
+
+%h7 {
+  font-size: $h7;
+}
+
+%footer_text {
+  font-size: $footer_text;
+}
+
+%h8 {
+  font-size: $h8;
+}
+
+//-------------------------------------- 文字繼承 --------------------------------------
+
+//特殊英文字體
+%cg_font {
+  font-family: $cg_font;
+}
+
+//繼承新細明體
+%ming_font {
+  font-family: $ming_font;
+}
+
+//繼承思源宋
+%tc_font {
+  font-family: $tc_font;
+}
+
+//繼承思源黑
+%tc_sans {
+  font-family: $tc_sans;
+}
+
+//字粗300
+%font300 {
+  font-weight: 300;
+}
+
+//字粗400
+%font400 {
+  font-weight: 400;
+}
+
+//字粗500
+%font500 {
+  font-weight: 500;
+}
+
+//字粗700
+%font700 {
+  font-weight: 700;
+}
+
+%pd10 {
+  padding-bottom: 10px;
+}
+
+//隱藏
+%disnone {
+  display: none;
+}
+
+//-------------------------------------- function 樣式 --------------------------------------
+@mixin box-shadow($x, $y, $z, $u, $c) {
+  -webkit-box-shadow: $x $y $z $u $c;
+  -moz-box-shadow: $x $y $z $u $c;
+  box-shadow: $x $y $z $u $c;
+}
+
+//漸層
+@mixin background($x, $y, $z, $percent) {
+  // Old browsers
+  background: $x;
+  // FF3.6-15
+  background: -moz-linear-gradient(top, $x 0%, $y $percent, $z 100%);
+  // Chrome10-25,Safari5.1-6
+  background: -webkit-linear-gradient(top, $x 0%, $y $percent, $z 100%);
+  // W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+
+  background: linear-gradient(to bottom, $x 0%, $y $percent, $z 100%);
+  // IE6-9
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$x', endColorstr='$z',GradientType=0 );
+}
+
+//圓弧
+@mixin r-border-radius($a, $b, $c, $d) {
+  -webkit-border-radius: $a $b $c $d;
+  -moz-border-radius: $a $b $c $d;
+  -ms-border-radius: $a $b $c $d;
+  -o-border-radius: $a $b $c $d;
+  border-radius: $a $b $c $d;
+}
+
+//ul-ol 的樣式
+@mixin ul-ol-style {
+  //ul style
+  ul {
+    list-style-type: none;
+    margin-left: 20px;
+    margin-bottom: 43px;
+    li {
+      line-height: 1.6em;
+      &:before {
+        content: "";
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 8px;
+        right: 10px;
+        bottom: 1px;
+        margin-left: -8px;
+        position: relative;
+        @extend %bgMain;
+      }
+      //ul裡面的ol
+      ol {
+        opacity: 100%;
+        margin: 10px 0 0 20px;
+        li {
+          opacity: 100%;
+          &:before {
+            @extend %disnone;
+          }
+        }
+      }
+      //ul裡面的ul
+      ul {
+        margin: 10px 0 0 20px;
+        li {
+          opacity: 100%;
+        }
+      }
+    }
+  }
+
+  //ol style
+  & > .wpb_wrapper {
+    //第一層的ol
+    & > ol {
+      margin-left: 18px;
+    }
+  }
+  ol {
+    li {
+      line-height: 1.6em;
+      margin-bottom: 5px;
+      //ol裡面的ul
+      ul {
+        margin-bottom: 0;
+        li {
+          &:before {
+            content: "";
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 8px;
+            right: 10px;
+            bottom: 1px;
+            margin-left: -8px;
+            position: relative;
+            @extend %bgMain;
+          }
+        }
+      }
+      //ol裡面的ol
+      ol {
+        opacity: 100%;
+        margin: 10px 0 0 20px;
+        li {
+          opacity: 100%;
+          &:before {
+            @extend %disnone;
+          }
+        }
+      }
+    }
+  }
+}
+
+//查看更多線條按鈕
+@mixin line-btn {
+  background: none;
+  border: none;
+  transition: 1s;
+  font-family: "Century Gothic", "Noto Sans TC";
+  @extend %btn_text;
+  @extend %font700;
+  @extend %color000;
+  &:before {
+    content: "";
+    @extend %bg000;
+    transition: 1s;
+    width: 37px;
+    height: 2px;
+    position: relative;
+    left: -24px;
+    display: inline-block;
+    top: -4px;
+  }
+  &:hover {
+    background: none;
+    border: none;
+    padding-right: 45px;
+    &:before {
+      background: #5e5e5e;
+      left: -30px;
+    }
+  }
+}
+
+//文章摘要 css
+@mixin multi-ellipsis($me-clamp, $me-line-height, $me-height) {
+  display: block; // 如果不是區塊元素的話，要加這一行
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $me-clamp; // N 填入要顯示的行數
+  line-height: $me-line-height; // X 填入行高 px 值
+  height: $me-height; // 限定高度為 X * N 的 px 值
+}
+
+//animation
+@keyframes rank_fadein {
+  from {
+    opacity: 0;
+    position: relative;
+  }
+  to {
+    opacity: 1;
+    position: absolute;
+  }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes rank_fadein {
+  from {
+    opacity: 0;
+    position: relative;
+  }
+  to {
+    opacity: 1;
+    position: absolute;
+  }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes rank_fadein {
+  from {
+    opacity: 0;
+    position: relative;
+  }
+  to {
+    opacity: 1;
+    position: absolute;
+  }
+}
+
+/* Internet Explorer */
+@-ms-keyframes rank_fadein {
+  from {
+    opacity: 0;
+    position: relative;
+  }
+  to {
+    opacity: 1;
+    position: absolute;
+  }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes rank_fadein {
+  from {
+    opacity: 0;
+    position: relative;
+  }
+  to {
+    opacity: 1;
+    position: absolute;
+  }
+}

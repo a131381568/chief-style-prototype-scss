@@ -1,0 +1,977 @@
+.home {
+  div#Header_wrapper {
+    //手機
+    @include phone-w() {
+      background: none;
+    }
+  }
+  #Header {
+    //主視覺區塊
+    rs-static-layers[data-key="staticlayers"] {
+      rs-mask-wrap {
+        //極小桌機螢幕
+        @include nball-w() {
+          overflow: visible !important;
+        }
+      }
+    }
+    //一般圖層
+    .mfn-rev-slider {
+      //幻燈片最外圍 div
+      rs-slide {
+        //手機
+        @include phone-w() {
+          background: #fff;
+        }
+      }
+      rs-sbg {
+        //手機
+        @include phone-w() {
+          background-position: left top !important;
+          background-size: 123% !important;
+        }
+      }
+      //右邊文字的br
+      .mobile-show {
+        //手機 以上的尺寸
+        @include phone-w-outer() {
+          display: none;
+        }
+      }
+      .play-btn {
+        //極小桌機螢幕
+        @include nball-w() {
+          bottom: 35px;
+        }
+        //手機
+        @include phone-w() {
+          background: $main-color !important;
+          border-color: #fff !important;
+        }
+      }
+      .watch-now {
+        font-family: "Century Gothic", "Noto Sans TC" !important;
+        //極小桌機螢幕
+        @include nball-w() {
+          bottom: 35px;
+        }
+      }
+      .social-link {
+        font-family: "Century Gothic", "Noto Sans TC" !important;
+        //全筆電
+        @include nball-w() {
+          font-size: $footer_text !important;
+          left: 45px;
+          top: -5px;
+        }
+      }
+      //lead more
+      .home-key-lead-more {
+        transition: 2s;
+        &:not(.home-key-lead-more-red) {
+          //小螢幕(小)  1680 > n > 1441
+          @include pcs-w() {
+            right: 0px;
+            bottom: -25px;
+          }
+          //全筆電
+          @include nball-w() {
+            bottom: -30px;
+          }
+          //中螢幕以下 平板以上
+          @include pcfull-w() {
+            //left: 145%;
+          }
+        }
+
+        &:hover {
+          .home-key-lead-more-text {
+            transform: translate(10px, 0px) !important;
+            @extend %color000;
+          }
+          .home-key-lead-more-line {
+            width: 55px !important;
+            @extend %color000;
+          }
+        }
+        .home-key-lead-more-text {
+          font-family: "Century Gothic", "Noto Sans TC" !important;
+        }
+        .home-key-lead-more-line {
+        }
+        * {
+          transition: 1s;
+        }
+      }
+      //上方的lead more
+      .home-key-lead-more-red {
+        bottom: 30px;
+        //全筆電
+        @include nball-w() {
+          bottom: 70px;
+        }
+        //全部行動載具
+        @include mobileall-w() {
+          bottom: 0;
+        }
+      }
+
+      //上方的白色區塊
+      .home-key-white-block {
+        bottom: 2px;
+        //全筆電
+        @include nball-w() {
+          width: 640px !important;
+          right: 5px;
+        }
+      }
+      //上方的黑色文字
+      .home-key-title {
+        //全筆電
+        @include nball-w() {
+          font-size: 30px !important;
+          bottom: 53px;
+        }
+      }
+      //左邊紅色區塊
+      .home-key-red-block {
+        //中螢幕以下 平板以上
+        @include pcfull-w() {
+          top: 45px;
+        }
+        //小螢幕以下 平板以上
+        @include pcs-w-padl() {
+          width: 850px !important;
+        }
+        //全筆電
+        @include nball-w-n128() {
+          top: 80px;
+          width: 675px !important;
+        }
+        //極小桌機螢幕
+        @include nbxxs-w() {
+          top: 110px;
+          width: 637px !important;
+        }
+        //全部的平板(橫+直)
+        @include pad-p-l-w() {
+          top: 20px;
+        }
+      }
+      //白色箭頭
+      .arr-btn {
+        //中螢幕以下 平板以上
+        /*
+        @include pcfull-w() {
+          bottom: 20px;
+        }
+        */
+        //中螢幕以下 筆電以上 1750 > n > 1680
+        @include pcm-w-notnb() {
+          bottom: 56px;
+        }
+        //小螢幕(小) 1680 > n > 1441
+        @include pcs-w() {
+          bottom: 130px;
+        }
+        //全筆電
+        @include nball-w-n128() {
+          bottom: 205px;
+        }
+        //極小桌機螢幕
+        @include nbxxs-w() {
+          bottom: 230px;
+        }
+      }
+      //下方白色豆豆
+      .tp-bullets {
+        //小螢幕(小)
+        @include pcs-w() {
+          left: -21px !important;
+        }
+        //全筆電
+        @include nball-w() {
+          left: -38px !important;
+          display: none !important;
+        }
+        //全部的平板(橫+直)
+        @include pad-p-l-w() {
+          display: none !important;
+        }
+        //手機
+        @include phone-w() {
+          top: 215px !important;
+          left: calc(50% - 28px) !important;
+          transform: none !important;
+        }
+        .tp-bullet.tp-bullet {
+          //手機
+          @include phone-w() {
+            background: #fff;
+            opacity: 0.6;
+            width: 3px;
+            height: 3px;
+          }
+        }
+        .tp-bullet.tp-bullet.selected {
+          //手機
+          @include phone-w() {
+            opacity: 1;
+          }
+        }
+      }
+      //編號
+      .key-red-num {
+        font-family: "Century Gothic", "Noto Sans TC" !important;
+        //全筆電
+        @include nball-w() {
+        }
+        &:before {
+          content: "";
+          width: 52px;
+          height: 1px;
+          display: inline-block;
+          transform: rotate(-45deg);
+          position: relative;
+          left: -8px;
+          bottom: 13px;
+          margin-right: -10px;
+          @extend %bgfff;
+          //全部的平板(橫+直)
+          @include pad-p-l-w() {
+            width: 28px;
+          }
+        }
+        &:after {
+          content: "";
+          width: 128px;
+          height: 2px;
+          display: block;
+          @extend %bgfff;
+          //全部的平板(橫+直)
+          @include pad-p-l-w() {
+            width: 60px;
+          }
+          //手機
+          @include phone-w() {
+            margin-top: 10px;
+          }
+        }
+      }
+      .key-sub-slogan {
+        //全筆電
+        @include nball-w() {
+        }
+      }
+      //右邊的文字
+      .key-right-sub {
+        font-family: "Century Gothic", "Noto Sans TC" !important;
+        //中螢幕以下 平板以上 1903 > n > 1025
+        @include pcfull-w() {
+          top: 30px !important;
+          width: 500px !important;
+          white-space: normal !important;
+        }
+      }
+      .key-right-main-title {
+        font-weight: 500 !important;
+        //中螢幕以下 平板以上 1903 > n > 1025
+        @include pcfull-w() {
+          width: 500px !important;
+          white-space: normal !important;
+        }
+      }
+      //右邊的文字群組
+      .home-key-right-group {
+        //中螢幕以下 平板以上 1903 > n > 1025
+        @include pcfull-w() {
+          left: 40%;
+        }
+        //極小桌機螢幕  1280 > n > 1025
+        @include nbxxs-w() {
+          left: 50%;
+        }
+        //全部的平板(橫+直)
+        @include pad-p-l-w() {
+          //left: -50px;
+        }
+      }
+    }
+  }
+
+  .chief_tab_title {
+    margin-bottom: 35px;
+    //@extend %font700;
+  }
+  .addtoany_content_bottom {
+    @extend %disnone;
+  }
+}
+
+//商業應用區塊
+.vc_row.wpb_row.home-business-row {
+  margin-top: -90px;
+  bottom: -90px;
+  //手機
+  @include phone-w() {
+    padding: 0 !important;
+    overflow: visible;
+    margin-top: -60px;
+  }
+
+  .vc_column-inner {
+    //手機
+    @include phone-w() {
+      padding: 0 !important;
+    }
+  }
+
+  .vc_parallax-inner {
+    //手機
+    @include phone-w() {
+      display: none;
+    }
+  }
+  .home-business.home-business.home-business {
+    margin-bottom: 0;
+    max-width: 1015px;
+    margin: 0 auto;
+    //手機
+    @include phone-w() {
+      & > div {
+        &:nth-child(1) {
+          z-index: 2;
+          .wpb_wrapper {
+            background: #407875;
+          }
+        }
+        &:nth-child(2) {
+          z-index: 2;
+          .wpb_wrapper {
+            background: #3b76ad;
+          }
+        }
+        &:nth-child(3) {
+          .wpb_wrapper {
+            background: #2f60a2;
+          }
+        }
+        &:nth-child(4) {
+          .wpb_wrapper {
+            background: #a55431;
+          }
+        }
+      }
+    }
+
+    .vc_column-inner {
+      padding: 0;
+      min-height: 427px;
+      //手機
+      @include phone-w() {
+        background-size: contain;
+        min-height: 340px;
+        margin-bottom: -68px;
+        background-position: bottom;
+        background-repeat: no-repeat;
+      }
+
+      &:before {
+        content: " ";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: calc(100% - 85px);
+        z-index: 1;
+        @include box-shadow(6px, -9px, 6px, 0px, rgba(0, 0, 0, 0.2));
+        //手機
+        @include phone-w() {
+          display: none;
+        }
+      }
+
+      .wpb_wrapper {
+        div {
+          margin-bottom: 0;
+          //margin-top: -65px;
+        }
+        .applic_title {
+          z-index: 3;
+          position: relative;
+          padding-top: 53px;
+          left: 30px;
+          //手機
+          @include phone-w() {
+            font-size: $tab_title;
+            left: 0;
+            width: 100%;
+            text-align: center !important;
+            top: 15px;
+          }
+        }
+        .applic_s_title {
+          z-index: 3;
+          position: relative;
+          left: 30px;
+          letter-spacing: 0;
+          @extend %cg_font;
+          @extend %font700;
+          //手機
+          @include phone-w() {
+            font-size: 10px;
+            left: 0;
+            width: 100%;
+            text-align: center !important;
+            top: 7px;
+          }
+        }
+      }
+    }
+  }
+}
+
+//合作夥伴
+.home-partners-row {
+  padding-top: 79px;
+  @include background($colorgblue, $colorgblue, #fff, 80%);
+  //手機
+  @include phone-w() {
+    top: 60px;
+    padding-bottom: 120px;
+  }
+  img {
+    @include r-border-radius(99px, 99px, 99px, 99px);
+    @include box-shadow(0px, 2px, 5px, 0px, rgba(0, 0, 0, 0.2));
+  }
+  .home-partners {
+    margin: 60px 0 20px;
+  }
+  //輪播模組
+  .home-partners-carousel {
+    margin-bottom: 0;
+  }
+  .vc_btn3-container {
+    //手機
+    @include phone-w() {
+      margin-top: 40px;
+    }
+  }
+}
+
+//最新消息文章列表
+#Content {
+  .home-new-row {
+    //主標題
+    h2.cg_font {
+      margin-bottom: 50px;
+    }
+    //左邊重點卡片
+    .home-new-row-card {
+      & > .vc_column-inner {
+        //手機
+        @include phone-w() {
+          padding: 0;
+        }
+      }
+      .wpb_wrapper {
+        & > div {
+          margin-bottom: 0;
+        }
+      }
+      .home-new-row-card-bottom {
+        .card_title {
+          @extend %font500;
+          @extend %colordblue;
+          @extend %card_title;
+          line-height: 1.4em;
+          //手機
+          @include phone-w() {
+            font-size: $h5;
+            font-weight: normal;
+            color: $color000;
+          }
+        }
+        .card_date {
+          @extend %h6;
+          @extend %colordblue;
+          @extend %cg_font;
+          opacity: 80%;
+          border-bottom: 1px solid $colorline;
+          padding-bottom: 10px;
+          margin-bottom: 20px;
+          display: inline-block;
+
+          //手機
+          @include phone-w() {
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+          }
+        }
+        .card_content {
+          margin-bottom: 25px;
+          p {
+            @extend %h6;
+            @extend %colordblue;
+            opacity: 77%;
+            line-height: 1.6em;
+          }
+        }
+        & > .wpb_column {
+          & > .vc_column-inner {
+            & > .wpb_wrapper {
+              padding: 20px;
+              //手機
+              @include phone-w() {
+                padding: 30px 0;
+              }
+            }
+          }
+        }
+        .vc_btn3-container {
+          //手機
+          @include phone-w() {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+
+  .home-new-row-list {
+    & > .vc_column-inner {
+      //手機
+      @include phone-w() {
+        padding: 0;
+      }
+      & > .wpb_wrapper {
+        border: 1px solid $colorline;
+        padding: 15px 25px;
+        //手機
+        @include phone-w() {
+          border: none;
+          padding: 0;
+        }
+      }
+    }
+
+    //上方手機版的頁籤
+    .home-new-row-list-tab {
+      margin-bottom: 15px;
+      //手機 以上的尺寸
+      @include phone-w-outer() {
+        display: none;
+      }
+      & > div:first-child {
+        &:before {
+          content: "";
+          border: 18px solid transparent;
+          border-right: 18px solid $color83;
+          border-bottom: 18px solid $color83;
+          position: absolute;
+          top: -9px;
+          left: calc(100% - 18px);
+        }
+        &:after {
+          content: "";
+          border: 18px solid transparent;
+          border-right: 18px solid #fff;
+          border-bottom: 18px solid #fff;
+          position: absolute;
+          top: -8px;
+          left: calc(100% - 18px);
+        }
+      }
+      //手機
+      @include phone-w() {
+        .vc_custom_heading {
+          font-size: 25px;
+        }
+        .home-new-row-list-tag-news {
+          color: $main-color;
+        }
+        .home-new-row-list-tag-tender {
+          color: $colorb5;
+        }
+        .vc_custom_heading.vc_custom_heading.colormain {
+          color: $main-color;
+        }
+        .vc_custom_heading.vc_custom_heading.colorb5 {
+          color: $colorb5;
+        }
+      }
+    }
+
+    //list上方的標題
+    .home-new-row-list-top-col {
+      margin-bottom: 12px;
+      //手機
+      @include phone-w() {
+        display: none;
+      }
+
+      .wpb_wrapper {
+        & > * {
+          margin-bottom: 0;
+        }
+      }
+      .vc_btn3-style-modern {
+        padding-right: 0;
+      }
+    }
+
+    //手機版的 news list
+    .home-new-row-list-middle-col {
+      .vc_btn3-container {
+        //手機
+        @include phone-w() {
+          text-align: center;
+          margin-top: 5px;
+          border-top: 1px solid $colorline;
+          padding-top: 15px;
+        }
+      }
+    }
+    .home-new-row-list-middle-col.home-new-row-list-tag-tender {
+      //手機
+      @include phone-w() {
+        display: none;
+      }
+    }
+    //隱藏版標籤
+    .home-new-row-list-middle-col.new-hide.new-hide {
+      display: none;
+    }
+    //顯示版標籤
+    .home-new-row-list-middle-col.new-show.new-show {
+      display: block;
+    }
+
+    .vc_basic_grid {
+      margin-bottom: 0;
+    }
+
+    .vc_grid-container-wrapper {
+      margin-bottom: 0;
+    }
+
+    .vc_grid-item {
+      border-bottom: 1px solid $colorline;
+      padding: 10px 0;
+      &:first-child {
+        border-top: 1px solid $colorline;
+      }
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    //切割分隔線
+    .segment-new-list {
+      margin: 20px -26px 30px;
+      width: calc(100% + 52px);
+      .vc_sep_line {
+        background: #f7f7f7;
+        border-top: 1px solid $colorline;
+        border-bottom: 1px solid $colorline;
+        height: 12px;
+      }
+      //手機
+      @include phone-w() {
+        display: none;
+      }
+    }
+  }
+  .chief-post-list {
+    &:before {
+      //padding-top: 40px;
+      padding-top: 0;
+    }
+    .vc_gitem-row-position-middle {
+      position: relative;
+      top: 0;
+      transform: none;
+      & > .chief-post-list-title-col {
+        width: calc(100% - 100px);
+        //手機 以上的尺寸
+        @include phone-w-outer() {
+          right: 100px;
+        }
+      }
+      & > .chief-post-list-date-col {
+        width: 100px;
+        //手機 以上的尺寸
+        @include phone-w-outer() {
+          left: calc(100% - 100px);
+        }
+      }
+      .vc_gitem-col {
+        padding: 0;
+        //手機
+        @include phone-w() {
+          width: 100%;
+        }
+
+        .chief-post-list-title {
+          margin-bottom: 0;
+          & > * {
+            margin-bottom: 0;
+            line-height: 1.6em;
+            @extend %footer_title;
+            @extend %font400;
+            @extend %colordblue;
+          }
+          a {
+            @extend %footer_title;
+            @extend %font400;
+            @extend %colordblue;
+            opacity: 90%;
+            //手機
+            @include phone-w() {
+              font-weight: 700;
+              color: $color40;
+            }
+          }
+        }
+        .chief-post-list-date {
+          margin-bottom: 0;
+          & > * {
+            padding-top: 5px;
+            margin-bottom: 0;
+            letter-spacing: 0;
+            opacity: 80%;
+            @extend %cg_font;
+            @extend %font400;
+            @extend %colordblue;
+            //手機
+            @include phone-w() {
+              font-weight: 700;
+              font-size: $h7;
+              color: $color40;
+              margin-bottom: 5px;
+              text-align: left !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  //訂閱電子報
+  .newsletter-row {
+    //左邊圖文敘述
+    .newsletter-row-des {
+      & > .vc_column-inner {
+        padding: 30px 0 40px;
+        & > .wpb_wrapper {
+          & > .vc_row-fluid {
+            margin-bottom: 0;
+          }
+        }
+      }
+      h3 {
+        @extend %font500;
+        margin-bottom: 5px;
+        //手機
+        @include phone-w() {
+          text-align: center !important;
+          font-size: 25px;
+          font-weight: normal;
+        }
+      }
+      .chief_tab_title {
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        @extend %font700;
+        //手機
+        @include phone-w() {
+          text-align: center !important;
+          color: #fff;
+          opacity: 70%;
+        }
+      }
+      h6 {
+        @extend %font300;
+        margin-bottom: 25px;
+        //手機
+        @include phone-w() {
+          text-align: center !important;
+          opacity: 90%;
+          font-size: $h8;
+          padding: 0 8%;
+        }
+      }
+      //按鈕
+      .vc_btn3-container {
+        margin: 0;
+        //手機
+        @include phone-w() {
+          text-align: center;
+          font-weight: 700;
+        }
+      }
+    }
+    //右邊表單
+    .newsletter-row-form {
+      padding-right: calc(50% - 587.5px - 18px);
+      @extend %bgMain;
+      &:before {
+        content: " ";
+        @extend %bgfff;
+        display: block;
+        position: absolute;
+        height: 40px;
+        width: 100%;
+        //手機
+        @include phone-w() {
+          height: 0;
+        }
+      }
+      .vc_empty_space {
+        @extend %bgfff;
+        margin-bottom: 0;
+      }
+      .newsletter-row-form-box {
+        margin: 0;
+        padding: 30px;
+        //手機
+        @include phone-w() {
+          padding: 30px 20px;
+        }
+        h3 {
+          @extend %font500;
+          margin-bottom: 0;
+          //手機
+          @include phone-w() {
+            text-align: center !important;
+            font-size: 25px;
+            font-weight: normal;
+          }
+        }
+        .chief_tab_title {
+          margin-bottom: 12px;
+          text-transform: uppercase;
+          @extend %font700;
+          //手機
+          @include phone-w() {
+            text-align: center !important;
+            color: #fff;
+          }
+        }
+        .wpcf7 {
+          margin-bottom: 0;
+          .new-letter-col {
+            @extend %bgfff;
+            display: inline-block;
+            width: 100%;
+            height: 45px;
+            & > .your-mail {
+              float: left;
+              width: calc(100% - 40px);
+              height: 100%;
+              input {
+                border: none;
+                background: none !important;
+                padding: 12px 14px;
+                @extend %h6;
+                //@extend %tc_font;
+              }
+            }
+            & > .submit-icon {
+              float: right;
+              width: 40px;
+              &:before {
+                position: absolute;
+                right: 0;
+                padding-top: 9px;
+                @extend %color83;
+                @extend %h3;
+                //手機
+                @include phone-w() {
+                  right: 5px;
+                }
+              }
+              input {
+                font-size: 0;
+                height: 30px;
+                opacity: 0;
+                padding: 0;
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  //認證區塊
+  .home-certification-row {
+    padding: 65px 0 50px;
+
+    & > .wpb_column {
+      & > .vc_column-inner {
+        padding-top: 0;
+      }
+    }
+
+    .wpb_single_image {
+      margin-bottom: 10px;
+      .vc_single_image-wrapper {
+        margin-bottom: 0;
+      }
+    }
+    .home-certification {
+      margin-bottom: 0;
+      //手機
+      @include phone-w() {
+        display: none;
+      }
+    }
+    .h7 {
+      margin-bottom: 0;
+    }
+
+    //手機版轉輪播
+    .home-certification-carousel {
+      margin-bottom: 0;
+      .h7 {
+        @extend %fff-font;
+        @extend %cg_font;
+        @extend %font700;
+      }
+      img {
+        padding-bottom: 12px;
+      }
+      .vc_carousel-control {
+        span {
+          @extend %fff-font;
+        }
+      }
+      .vc_left {
+        left: -13%;
+      }
+      .vc_right {
+        right: -13%;
+      }
+    }
+  }
+
+  //手機版首頁字級
+  h2 {
+    //手機
+    @include phone-w() {
+      color: $color000;
+      font-size: $h3;
+    }
+  }
+  .chief_tab_title {
+    //手機
+    @include phone-w() {
+      color: $colordblue;
+      font-size: $h6;
+      line-height: 1.6em;
+      margin-top: 10px;
+    }
+  }
+}

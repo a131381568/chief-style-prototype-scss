@@ -1,0 +1,14 @@
+body.category-onlineview {
+  #Content {
+    .posts_group {
+      .post-item {
+        .post-excerpt {
+          @extend %disnone;
+        }
+        .post-footer {
+          @extend %disnone;
+        }
+      }
+    }
+  }
+}

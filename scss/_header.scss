@@ -1,0 +1,254 @@
+//Extra Bar ---------------------------------------------------
+
+.top_bar_extra {
+  @extend %bgfff;
+  display: block;
+  height: 2.5rem;
+  padding: 1rem 4rem 0;
+  margin: 0 auto;
+  position: relative;
+  //全部行動載具
+  @include mobileall-w() {
+    display: none;
+  }
+
+  & > * {
+    //display: inline-block;
+    float: right;
+    margin-right: 40px;
+  }
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  //搜尋按鈕
+  #search_button {
+    //
+  }
+
+  //語系
+  .language_dropdown {
+    .language-txt {
+      &:before {
+        content: "";
+        border-color: $color40 transparent transparent transparent;
+        border-style: solid;
+        border-width: 6px 3px 3px 3px;
+        height: 0px;
+        width: 0px;
+        position: absolute;
+        right: -16px;
+        top: 11px;
+        overflow: visible;
+      }
+    }
+    .dropdown-toggle.dropdown-toggle {
+      overflow: unset;
+      background: none;
+      margin: 0;
+      outline: none;
+      padding: 0;
+      @include box-shadow(0, 0, 0, 0, #000);
+      &:hover {
+        background: none;
+      }
+      &:after {
+        @extend %disnone;
+      }
+    }
+    .dropdown-menu {
+      position: absolute;
+      @extend %disnone;
+    }
+    &:hover {
+      .language-txt {
+        &:before {
+          border-color: $main-color transparent transparent transparent;
+        }
+      }
+    }
+  }
+  .language_dropdown.show.show {
+    .dropdown-menu {
+      display: block;
+      z-index: 250;
+      background: #fff;
+      padding: 10px 40px 10px 20px;
+      margin-top: 1rem;
+      @include box-shadow(0, 0, 5px, 0, #ccc);
+      .dropdown-item {
+        @extend %color40;
+        &:hover {
+          @extend %colorMain;
+        }
+      }
+    }
+  }
+
+  //共用
+  .top_bar_extra_item {
+    display: inline-block;
+    vertical-align: middle;
+    &:before {
+      @extend %font700;
+      @extend %colorb5;
+    }
+    .top_bar_extra_item_txt {
+      margin-left: 0.1rem;
+      @extend .top_bar_extra_item;
+      @extend %font500;
+      @extend %color40;
+      @extend %h6;
+      &:hover {
+        @extend %colorMain;
+      }
+    }
+    img {
+      @extend .top_bar_extra_item;
+    }
+  }
+}
+
+//Main Header---------------------------------------------------------
+
+//右上角三角形
+#Sliding-top {
+  @extend %disnone;
+}
+#Top_bar {
+  height: 80px;
+  opacity: 1;
+  //全部行動載具
+  @include mobileall-w() {
+    height: 60px;
+  }
+  .logo {
+    #logo {
+      padding: 0;
+    }
+  }
+  .menu.menu {
+    & > li {
+      & > a {
+        padding: 0;
+        &:hover {
+          @extend %colorMain;
+        }
+      }
+    }
+  }
+  .top_bar_right.top_bar_right.top_bar_right {
+    display: none !important;
+  }
+}
+#Top_bar.is-sticky.is-sticky {
+  opacity: 1;
+}
+
+//主標題區塊---------------------------------------------------------
+
+#Subheader {
+  & > .container {
+    max-width: calc(1175px + 10% + 42px * 2);
+    //筆電以下
+    @include nb-bottm-w() {
+      padding: 0 42px;
+    }
+  }
+  h1.title {
+    @extend %h1;
+    @extend %tc_sans;
+    @extend %font500;
+  }
+}
+
+//mobile menu ----------------------------------------
+#Side_slide {
+  .extras.extras {
+    .extras-wrapper {
+      text-align: left;
+    }
+  }
+}
+
+//GDPR FIX 區塊
+#cookie-notice {
+  * {
+    @extend %tc_sans;
+    @extend %font300;
+    letter-spacing: 0.05rem;
+  }
+
+  //筆電以下
+  @include nb-bottm-w() {
+    div.cookie-notice-container {
+      display: flex;
+      #cn-notice-text {
+        width: calc(100% - 80px);
+        float: left;
+        display: block;
+        align-self: center;
+        margin: 0;
+        text-align: left;
+      }
+      #cn-notice-buttons {
+        width: 40px;
+        float: left;
+        display: block;
+        align-self: center;
+      }
+    }
+  }
+
+  // 1366 > n > 1113
+  @include nbs-w() {
+    #cn-more-info#cn-more-info#cn-more-info {
+      display: block;
+    }
+  }
+
+  // 1112 > n > 768
+  //全部的平板(橫+直)
+  @include pad-p-l-w() {
+    #cn-notice-text#cn-notice-text#cn-notice-text {
+      width: 80%;
+    }
+  }
+
+  // 767 > n
+  //手機
+  @include phone-w() {
+    .cookie-notice-container.cookie-notice-container.cookie-notice-container {
+      #cn-notice-text#cn-notice-text#cn-notice-text {
+        width: 100%;
+        float: none;
+      }
+      #cn-notice-buttons#cn-notice-buttons#cn-notice-buttons {
+        width: 100%;
+        float: none;
+        text-align: left;
+        margin-top: 5px;
+        a {
+          margin: 0;
+        }
+      }
+      #cn-close-notice {
+        top: auto;
+        bottom: 22px;
+        right: 25px;
+      }
+    }
+  }
+}
+
+//有顯示視窗時
+#cookie-notice.cookie-notice-visible {
+  //手機
+  @include phone-w() {
+    .cookie-notice-container.cookie-notice-container.cookie-notice-container {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+.single-portfolio {
+  .post-header.column {
+    width: 48%;
+    float: right;
+    //上方作者資訊
+    .author-date {
+      @extend %disnone;
+    }
+  }
+  //特色圖片
+  .single-photo-wrapper {
+    @extend %disnone;
+  }
+  //資訊
+  .project-description.column {
+    width: 48%;
+    float: left;
+    li {
+      background: none;
+      border: none;
+      padding: 0;
+      &:before {
+        content: "\e843";
+        font-family: "mfn-icons";
+        font-style: normal;
+        font-weight: 400;
+        speak: none;
+        display: inline-block;
+        text-decoration: none !important;
+        width: 1em;
+        margin-right: 0.5em;
+        text-align: center;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1em;
+        margin-left: 0.2em;
+      }
+      .label {
+        @extend %disnone;
+      }
+    }
+  }
+  //左右箭頭
+  .fixed-nav {
+    @extend %disnone;
+  }
+}

@@ -1,0 +1,279 @@
+body {
+  #Content {
+    .vc_btn3-container {
+      margin-bottom: 0;
+
+      //預設查看更多按鈕( Learn More )
+      a.vc_btn3-style-modern.vc_btn3.vc_btn3-style-modern.vc_general {
+        @include line-btn;
+      }
+
+      //紅色方塊按鈕
+      a.vc_btn3-style-classic.vc_btn3.vc_general {
+        padding: 14px 25px;
+        border: none;
+        font-family: "Century Gothic", "Noto Sans TC";
+        @include r-border-radius(0, 0, 0, 0);
+        @extend %btn_text;
+        @extend %fff-font;
+        @extend %bgMain;
+      }
+    }
+
+    //預設tab樣式
+    .vc_general.vc_tta.vc_tta.vc_tta-style-classic {
+      border: 2px solid $colormblue;
+      //桌機版 filter
+      .vc_tta-tabs-container {
+        .vc_tta-tab {
+          a {
+            @extend %bgfff;
+            @extend %color32;
+            border-color: #fff;
+            padding: 14px 30px;
+          }
+        }
+        .vc_tta-tab.vc_active {
+          a {
+            &:after {
+              content: "";
+              display: inline-block;
+              width: calc(100% - 40px);
+              height: 3px;
+              position: absolute;
+              left: 20px;
+              z-index: 10;
+              top: calc(100% - 3px);
+              @extend %bgMain;
+            }
+          }
+        }
+      }
+      //內容區塊
+      .vc_tta-panels-container {
+        .vc_tta-panels {
+          @extend %bgmblue;
+          @include r-border-radius(0, 0, 0, 0);
+          .vc_tta-panel {
+            //行動版 fliter
+            .vc_tta-panel-heading {
+            }
+            .vc_tta-panel-body {
+              padding: 48px 40px;
+            }
+          }
+        }
+      }
+    }
+
+    //預設手風琴樣式
+    .vc_tta-accordion {
+      .vc_tta-panels {
+        //一般的手風琴標題
+        .vc_tta-panel-heading {
+          @extend %bgmblue;
+        }
+        .vc_tta-panel-body {
+          @extend %bgmblue;
+        }
+        //active 的手風琴標題
+        .vc_tta-panel.vc_active {
+          .vc_tta-panel-heading {
+            @extend %bgfff;
+          }
+          .vc_tta-panel-body {
+          }
+        }
+      }
+    }
+
+    //tablepress 表格樣式
+    table.tablepress {
+      border: 1px solid $colorline;
+      thead {
+        th {
+          @extend %bgb5;
+          @extend %color000;
+        }
+      }
+      tr {
+        //偶數欄位白色
+        opacity: 90%;
+        @extend %colordblue;
+        @extend %bgfff;
+        &:hover {
+          td {
+            @extend %colordblue;
+            @extend %bgfff;
+            background: none;
+          }
+        }
+        //偶數欄位灰色
+        &:nth-of-type(2n + 1) {
+          @extend %bgmblue;
+          &:hover {
+            td {
+              @extend %colordblue;
+              @extend %bgmblue;
+              background: none;
+            }
+          }
+        }
+        td {
+          @include box-shadow(0, 0, 0, 0, #000);
+          background: none;
+          border: none;
+
+          &:not(:last-child) {
+            border-right: 1px solid $colorline;
+          }
+          th {
+            border: none;
+          }
+          //ul-ol 樣式
+          @include ul-ol-style;
+          ul {
+            margin: 0 0 0 30px;
+            br {
+              @extend %disnone;
+            }
+          }
+          /*
+          ul {
+            margin-bottom: 0;
+            list-style-type: none;
+            margin-left: 30px;
+            br {
+              @extend %disnone;
+            }
+            li {
+              @extend %colordblue;
+              line-height: 1.6em;
+              &:before {
+                content: "";
+                display: inline-block;
+                width: 8px;
+                height: 8px;
+                border-radius: 8px;
+                right: 10px;
+                bottom: 1px;
+                margin-left: -8px;
+                position: relative;
+                @extend %bgMain;
+              }
+            }
+          }
+          */
+        }
+        td.column-1 {
+          text-align: center;
+          vertical-align: middle;
+        }
+        &:not(:last-child) {
+          border-bottom: 1px solid $colorline;
+        }
+      }
+      caption {
+        @extend %disnone;
+      }
+    }
+    //針對股東會資訊
+    .tablepress-id-shareholders_meeting_info.tablepress.tablepress{
+      /*
+      thead{
+        th{
+          min-width: 115px;
+          text-align: left;
+          //手機
+          @include phone-w() {
+            min-width:auto;
+          }
+        }
+      }
+      tbody{
+        td{
+          text-align: left;
+        }
+      }
+      */
+    }
+
+    //針對 主機規格 的表格 (主機代管)
+    .tablepress-id-host-spec {
+      td.column-1 {
+        @extend %font700;
+      }
+    }
+    //針對 q&a 的表格 (主機代管)
+    .tablepress-id-q-a {
+      tr.odd {
+        td {
+          @extend %font700;
+        }
+      }
+    }
+
+    //單一圖片工具
+    .wpb_single_image {
+      margin-bottom: 0;
+    }
+
+    //圖片輪播工具
+    .wpb_images_carousel {
+      margin-bottom: 0;
+      div {
+        margin-bottom: 0;
+      }
+      .vc_images_carousel {
+        .vc_item {
+          //手機
+          @include phone-w() {
+            text-align: center;
+          }
+        }
+        .vc_carousel-control {
+          span {
+            width: 80px;
+            height: 80px;
+            margin-top: -40px;
+            margin-left: -40px;
+            &:before {
+              font-family: "Pe-icon-7-stroke";
+              font-size: 80px;
+              font-size: 80px;
+              margin: 0;
+            }
+          }
+        }
+        .icon-prev {
+          &:before {
+            content: "\e686";
+          }
+        }
+        .icon-next {
+          &:before {
+            content: "\e684";
+          }
+        }
+      }
+    }
+  }
+}
+
+//------------------------------------------------------------------------------
+
+//針對下載相關的表格
+.table-download-page.table-download-page-list{
+  #Content {
+    .tablepress {
+      .column-1 {
+        width: calc(100% - 60px);
+        text-align: left;
+      }
+      .column-2 {
+        width: 60px;
+        text-align: center;
+      }
+    }
+  }
+}
